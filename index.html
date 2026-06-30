@@ -1,0 +1,1426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Glow Up Hack | AI-Powered Beauty Intelligence Marketplace</title>
+  <style>
+    :root {
+      --primary: #7C3AED;
+      --secondary: #E879F9;
+      --accent: #F59E0B;
+      --background: #FAFAFC;
+      --ink: #181225;
+      --muted: #6B6178;
+      --soft: #FFF7FC;
+      --card: rgba(255, 255, 255, 0.86);
+      --line: rgba(124, 58, 237, 0.14);
+      --shadow: 0 18px 46px rgba(69, 38, 115, 0.12);
+      --deep-shadow: 0 26px 68px rgba(124, 58, 237, 0.22);
+      --radius: 8px;
+      --nav-height: 70px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 14% 4%, rgba(232, 121, 249, 0.25), transparent 34%),
+        radial-gradient(circle at 88% 8%, rgba(245, 158, 11, 0.18), transparent 30%),
+        linear-gradient(180deg, #fff 0%, var(--background) 38%, #fff7fc 100%);
+      line-height: 1.55;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    input {
+      font: inherit;
+    }
+
+    .page {
+      overflow: hidden;
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      height: var(--nav-height);
+      display: flex;
+      align-items: center;
+      padding: 12px 16px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.72);
+      background: rgba(250, 250, 252, 0.82);
+      backdrop-filter: blur(18px);
+    }
+
+    .nav-inner {
+      width: min(1160px, 100%);
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-width: max-content;
+      font-weight: 900;
+      letter-spacing: 0;
+    }
+
+    .brand-mark {
+      width: 40px;
+      height: 40px;
+      display: grid;
+      place-items: center;
+      border-radius: var(--radius);
+      color: #fff;
+      background: linear-gradient(135deg, var(--primary), var(--secondary) 62%, var(--accent));
+      box-shadow: 0 14px 28px rgba(124, 58, 237, 0.26);
+    }
+
+    .brand-mark svg {
+      width: 22px;
+      height: 22px;
+    }
+
+    .nav-links {
+      display: none;
+      max-width: 680px;
+      overflow-x: auto;
+      gap: 4px;
+      padding: 5px;
+      border: 1px solid rgba(124, 58, 237, 0.11);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.72);
+      scrollbar-width: none;
+    }
+
+    .nav-links::-webkit-scrollbar {
+      display: none;
+    }
+
+    .nav-links a {
+      padding: 9px 12px;
+      border-radius: 999px;
+      color: #50465d;
+      font-size: 13px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--primary);
+      background: rgba(124, 58, 237, 0.09);
+    }
+
+    .nav-cta {
+      min-height: 42px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 14px;
+      border-radius: 999px;
+      color: #fff;
+      background: var(--ink);
+      font-size: 13px;
+      font-weight: 900;
+      box-shadow: 0 14px 30px rgba(24, 18, 37, 0.14);
+      white-space: nowrap;
+    }
+
+    .wrap {
+      width: min(1160px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    section {
+      scroll-margin-top: calc(var(--nav-height) + 22px);
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    h1 {
+      max-width: 10ch;
+      margin-bottom: 16px;
+      font-size: clamp(54px, 15vw, 118px);
+      line-height: 0.88;
+      letter-spacing: 0;
+    }
+
+    h2 {
+      margin-bottom: 0;
+      font-size: clamp(34px, 10vw, 66px);
+      line-height: 0.96;
+      letter-spacing: 0;
+    }
+
+    h3 {
+      margin-bottom: 8px;
+      font-size: 22px;
+      line-height: 1.08;
+      letter-spacing: 0;
+    }
+
+    .hero {
+      min-height: calc(100svh - var(--nav-height));
+      display: grid;
+      align-items: center;
+      padding: 34px 0 30px;
+    }
+
+    .hero-grid {
+      display: grid;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      width: fit-content;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 16px;
+      padding: 8px 12px;
+      border: 1px solid rgba(124, 58, 237, 0.16);
+      border-radius: 999px;
+      color: var(--primary);
+      background: rgba(255, 255, 255, 0.76);
+      font-size: 12px;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .spark {
+      width: 8px;
+      height: 8px;
+      flex: 0 0 auto;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 5px rgba(245, 158, 11, 0.18);
+    }
+
+    .tagline {
+      max-width: 760px;
+      margin-bottom: 12px;
+      font-size: clamp(25px, 7vw, 52px);
+      line-height: 1.02;
+      font-weight: 900;
+      letter-spacing: 0;
+    }
+
+    .lead {
+      max-width: 720px;
+      margin-bottom: 24px;
+      color: var(--muted);
+      font-size: clamp(17px, 4vw, 21px);
+    }
+
+    .hero-actions,
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .hero-actions {
+      margin-bottom: 22px;
+    }
+
+    .button {
+      min-height: 50px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 0 18px;
+      border: 0;
+      border-radius: 999px;
+      cursor: pointer;
+      font-size: 15px;
+      font-weight: 900;
+      transition: transform 180ms ease, box-shadow 180ms ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+    }
+
+    .button-primary {
+      color: #fff;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      box-shadow: 0 18px 36px rgba(124, 58, 237, 0.26);
+    }
+
+    .button-secondary {
+      color: var(--primary);
+      background: #fff;
+      border: 1px solid rgba(124, 58, 237, 0.14);
+      box-shadow: 0 14px 28px rgba(78, 45, 126, 0.08);
+    }
+
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      max-width: 620px;
+    }
+
+    .metric {
+      padding: 13px 12px;
+      border: 1px solid rgba(124, 58, 237, 0.12);
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, 0.74);
+      box-shadow: 0 12px 24px rgba(78, 45, 126, 0.07);
+    }
+
+    .metric strong {
+      display: block;
+      font-size: 19px;
+      line-height: 1.1;
+    }
+
+    .metric span {
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 800;
+    }
+
+    .phone-shell {
+      position: relative;
+      width: min(100%, 392px);
+      margin: 0 auto;
+      padding: 12px;
+      border: 1px solid rgba(124, 58, 237, 0.15);
+      border-radius: 42px;
+      background: linear-gradient(145deg, rgba(255,255,255,0.94), rgba(255,247,252,0.8));
+      box-shadow: var(--shadow), inset 0 0 0 8px rgba(255, 255, 255, 0.5);
+    }
+
+    .phone-screen {
+      position: relative;
+      min-height: 590px;
+      padding: 22px;
+      overflow: hidden;
+      border-radius: 32px;
+      background:
+        radial-gradient(circle at 20% 15%, rgba(232, 121, 249, 0.42), transparent 32%),
+        radial-gradient(circle at 82% 28%, rgba(245, 158, 11, 0.35), transparent 30%),
+        linear-gradient(160deg, #fff 0%, #fff1fb 45%, #f6efff 100%);
+    }
+
+    .scan-line {
+      position: absolute;
+      inset: 84px 18px auto;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, rgba(124, 58, 237, 0.78), transparent);
+      animation: scan 4s ease-in-out infinite;
+    }
+
+    @keyframes scan {
+      0%, 100% { transform: translateY(0); opacity: 0.35; }
+      50% { transform: translateY(335px); opacity: 0.95; }
+    }
+
+    .app-top,
+    .score-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+    }
+
+    .app-top {
+      margin-bottom: 20px;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 10px;
+      border-radius: 999px;
+      color: var(--primary);
+      background: rgba(255, 255, 255, 0.74);
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .avatar {
+      width: 36px;
+      height: 36px;
+      border: 3px solid #fff;
+      border-radius: 50%;
+      background:
+        radial-gradient(circle at 38% 28%, #fff 0 8%, transparent 9%),
+        linear-gradient(135deg, var(--accent), var(--secondary));
+      box-shadow: 0 8px 20px rgba(124, 58, 237, 0.14);
+    }
+
+    .glow-score,
+    .roadmap-card {
+      border: 1px solid rgba(255, 255, 255, 0.78);
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, 0.78);
+      box-shadow: 0 16px 35px rgba(78, 45, 126, 0.12);
+    }
+
+    .glow-score {
+      padding: 18px;
+    }
+
+    .score {
+      font-size: 56px;
+      line-height: 1;
+      font-weight: 950;
+      background: linear-gradient(135deg, var(--primary), var(--secondary), var(--accent));
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .ring {
+      width: 82px;
+      aspect-ratio: 1;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: conic-gradient(var(--primary) 0 76%, rgba(124, 58, 237, 0.12) 76% 100%);
+    }
+
+    .ring::before {
+      content: "";
+      width: 58px;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background: #fff;
+    }
+
+    .screen-title {
+      margin: 0;
+      font-size: 14px;
+      font-weight: 900;
+    }
+
+    .screen-copy {
+      margin: 5px 0 0;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 750;
+    }
+
+    .roadmap {
+      display: grid;
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .roadmap-card {
+      display: grid;
+      grid-template-columns: 38px 1fr auto;
+      align-items: center;
+      gap: 10px;
+      padding: 12px;
+    }
+
+    .icon-dot {
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      border-radius: var(--radius);
+      color: #fff;
+      background: var(--primary);
+      font-weight: 900;
+    }
+
+    .roadmap-card:nth-child(2) .icon-dot {
+      background: var(--secondary);
+    }
+
+    .roadmap-card:nth-child(3) .icon-dot {
+      background: var(--accent);
+    }
+
+    .roadmap-card strong {
+      display: block;
+      font-size: 13px;
+    }
+
+    .roadmap-card span {
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 750;
+    }
+
+    .status {
+      padding: 6px 9px;
+      border-radius: 999px;
+      color: #6b3a00;
+      background: rgba(245, 158, 11, 0.16);
+      font-size: 10px;
+      font-weight: 900;
+    }
+
+    .section {
+      padding: 58px 0;
+    }
+
+    .section-head {
+      display: grid;
+      gap: 10px;
+      max-width: 780px;
+      margin-bottom: 22px;
+    }
+
+    .section-copy {
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .grid {
+      display: grid;
+      gap: 14px;
+    }
+
+    .card {
+      position: relative;
+      padding: 22px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.72);
+      border-radius: var(--radius);
+      background: var(--card);
+      box-shadow: var(--shadow);
+    }
+
+    .card::after {
+      content: "";
+      position: absolute;
+      inset: auto 18px 0;
+      height: 4px;
+      border-radius: 999px 999px 0 0;
+      background: linear-gradient(90deg, var(--primary), var(--secondary), var(--accent));
+      opacity: 0.86;
+    }
+
+    .card p,
+    .step p,
+    .person p,
+    .fund-row span {
+      margin-bottom: 0;
+      color: var(--muted);
+    }
+
+    .highlight-card {
+      color: #fff;
+      background:
+        radial-gradient(circle at 84% 14%, rgba(245, 158, 11, 0.56), transparent 34%),
+        linear-gradient(135deg, #241536, var(--primary) 55%, #d946ef);
+      box-shadow: var(--deep-shadow);
+    }
+
+    .highlight-card p,
+    .highlight-card .section-copy {
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    .number {
+      width: 36px;
+      height: 36px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 18px;
+      border-radius: var(--radius);
+      color: #fff;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      font-weight: 950;
+    }
+
+    .list {
+      display: grid;
+      gap: 10px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .list li {
+      display: grid;
+      grid-template-columns: 24px 1fr;
+      gap: 10px;
+      align-items: start;
+      color: var(--muted);
+    }
+
+    .list li::before {
+      content: "";
+      width: 9px;
+      height: 9px;
+      margin-top: 8px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      box-shadow: 0 0 0 5px rgba(232, 121, 249, 0.16);
+    }
+
+    .feature {
+      display: grid;
+      grid-template-columns: 50px 1fr;
+      gap: 14px;
+      align-items: start;
+      padding: 18px;
+      border: 1px solid rgba(124, 58, 237, 0.1);
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, 0.76);
+      box-shadow: 0 14px 32px rgba(78, 45, 126, 0.08);
+    }
+
+    .feature-icon {
+      width: 50px;
+      height: 50px;
+      display: grid;
+      place-items: center;
+      border-radius: var(--radius);
+      color: #fff;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      font-size: 12px;
+      font-weight: 950;
+    }
+
+    .feature:nth-child(2n) .feature-icon {
+      background: linear-gradient(135deg, var(--secondary), var(--accent));
+    }
+
+    .feature p {
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .journey {
+      counter-reset: journey;
+    }
+
+    .step {
+      position: relative;
+      display: grid;
+      grid-template-columns: 46px 1fr;
+      gap: 14px;
+      align-items: start;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #fff;
+      box-shadow: 0 12px 26px rgba(78, 45, 126, 0.08);
+    }
+
+    .step-num {
+      width: 46px;
+      height: 46px;
+      display: grid;
+      place-items: center;
+      border-radius: var(--radius);
+      color: #fff;
+      background: var(--ink);
+      font-weight: 950;
+    }
+
+    .step h3 {
+      margin-bottom: 5px;
+      font-size: 18px;
+    }
+
+    .chip {
+      padding: 8px 10px;
+      border-radius: 999px;
+      color: var(--primary);
+      background: rgba(124, 58, 237, 0.09);
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .highlight-card .chip {
+      color: #fff;
+      background: rgba(255, 255, 255, 0.14);
+    }
+
+    .funding {
+      display: grid;
+      gap: 10px;
+    }
+
+    .fund-row {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 16px;
+      align-items: center;
+      padding: 14px;
+      border: 1px solid rgba(124, 58, 237, 0.11);
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, 0.76);
+    }
+
+    .fund-row strong {
+      font-size: 14px;
+    }
+
+    .fund-row b {
+      color: var(--primary);
+      font-size: 15px;
+    }
+
+    .team-grid {
+      display: grid;
+      gap: 14px;
+    }
+
+    .person {
+      display: grid;
+      grid-template-columns: 58px 1fr;
+      gap: 14px;
+      align-items: center;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #fff;
+      box-shadow: 0 12px 28px rgba(78, 45, 126, 0.08);
+    }
+
+    .person-avatar {
+      width: 58px;
+      height: 58px;
+      display: grid;
+      place-items: center;
+      border-radius: var(--radius);
+      color: #fff;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      font-weight: 950;
+    }
+
+    .person:nth-child(2) .person-avatar {
+      background: linear-gradient(135deg, var(--secondary), var(--accent));
+    }
+
+    .person:nth-child(3) .person-avatar {
+      background: linear-gradient(135deg, var(--accent), var(--primary));
+    }
+
+    .contact {
+      padding-bottom: 72px;
+    }
+
+    .cta-panel {
+      display: grid;
+      gap: 24px;
+      align-items: center;
+      padding: 24px;
+      border-radius: var(--radius);
+      color: #fff;
+      background:
+        radial-gradient(circle at 16% 12%, rgba(232, 121, 249, 0.74), transparent 31%),
+        radial-gradient(circle at 94% 18%, rgba(245, 158, 11, 0.66), transparent 33%),
+        linear-gradient(135deg, #211530, var(--primary));
+      box-shadow: var(--deep-shadow);
+    }
+
+    .cta-panel h2 {
+      max-width: 760px;
+    }
+
+    .cta-panel p {
+      margin-bottom: 0;
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 17px;
+    }
+
+    .contact-links {
+      display: grid;
+      gap: 8px;
+      margin-top: 18px;
+      font-weight: 900;
+    }
+
+    .qr-card {
+      width: min(100%, 260px);
+      justify-self: center;
+      padding: 16px;
+      border-radius: var(--radius);
+      color: var(--ink);
+      background: #fff;
+      box-shadow: 0 24px 52px rgba(23, 18, 34, 0.22);
+    }
+
+    .qr {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 1;
+      overflow: hidden;
+      border: 12px solid #fff;
+      border-radius: var(--radius);
+      background:
+        linear-gradient(90deg, var(--ink) 16px, transparent 16px) 0 0 / 32px 32px,
+        linear-gradient(var(--ink) 16px, transparent 16px) 0 0 / 32px 32px,
+        #fff;
+      box-shadow: inset 0 0 0 2px rgba(124, 58, 237, 0.12);
+      image-rendering: pixelated;
+    }
+
+    .qr::before,
+    .qr::after {
+      content: "";
+      position: absolute;
+      width: 54px;
+      height: 54px;
+      border: 12px solid #fff;
+      outline: 10px solid var(--ink);
+      border-radius: 4px;
+      background: var(--ink);
+    }
+
+    .qr::before {
+      left: 10px;
+      top: 10px;
+    }
+
+    .qr::after {
+      right: 10px;
+      bottom: 10px;
+    }
+
+    .qr-label {
+      margin: 12px 0 0;
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 600ms ease, transform 600ms ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (min-width: 720px) {
+      .wrap {
+        width: min(1160px, calc(100% - 48px));
+      }
+
+      .nav-links {
+        display: flex;
+      }
+
+      .hero {
+        padding: 52px 0 40px;
+      }
+
+      .hero-grid {
+        grid-template-columns: minmax(0, 1.06fr) minmax(330px, 0.74fr);
+        gap: 44px;
+      }
+
+      .grid.two {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .grid.three,
+      .team-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .grid.four {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+
+      .feature-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .journey {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+
+      .step {
+        grid-template-columns: 1fr;
+      }
+
+      .cta-panel {
+        grid-template-columns: 1fr 280px;
+        padding: 38px;
+      }
+    }
+
+    @media (min-width: 1040px) {
+      .section {
+        padding: 78px 0;
+      }
+
+      .feature-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 480px) {
+      .brand span {
+        max-width: 124px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      .nav-cta {
+        min-height: 38px;
+        padding-inline: 11px;
+        font-size: 12px;
+      }
+
+      .metrics {
+        grid-template-columns: 1fr;
+      }
+
+      .phone-screen {
+        min-height: 540px;
+        padding: 18px;
+      }
+
+      .roadmap-card {
+        grid-template-columns: 34px 1fr;
+      }
+
+      .roadmap-card .status {
+        grid-column: 2;
+        width: fit-content;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <nav class="nav" aria-label="Primary navigation">
+      <div class="nav-inner">
+        <a class="brand" href="#hero" aria-label="Glow Up Hack home">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M12 2.8l2.1 5.5 5.7.4-4.4 3.6 1.4 5.6L12 14.8l-4.8 3.1 1.4-5.6-4.4-3.6 5.7-.4L12 2.8z" fill="currentColor"/>
+            </svg>
+          </span>
+          <span>Glow Up Hack</span>
+        </a>
+        <div class="nav-links" aria-label="Section links">
+          <a href="#summary">Summary</a>
+          <a href="#problem">Problem</a>
+          <a href="#solution">Solution</a>
+          <a href="#ai">AI</a>
+          <a href="#mvp">MVP</a>
+          <a href="#funding">Funding</a>
+          <a href="#team">Team</a>
+        </div>
+        <a class="nav-cta" href="#contact">Scan</a>
+      </div>
+    </nav>
+
+    <main>
+      <section class="hero" id="hero">
+        <div class="wrap hero-grid">
+          <div class="reveal">
+            <div class="eyebrow"><span class="spark"></span> University innovation project</div>
+            <h1>Glow Up Hack</h1>
+            <p class="tagline">AI-Powered Beauty Intelligence Marketplace</p>
+            <p class="lead">Glow Up Hack helps users make safer, more personalised and more confident beauty decisions through guided self-assessment, AI-supported recommendations, verified provider matching, transparent comparison and post-service support.</p>
+            <div class="hero-actions">
+              <a class="button button-primary" href="#summary">Explore project</a>
+              <a class="button button-secondary" href="#contact">Open QR CTA</a>
+            </div>
+            <div class="metrics" aria-label="Project highlights">
+              <div class="metric"><strong>KL</strong><span>Initial pilot market</span></div>
+              <div class="metric"><strong>5 AI</strong><span>Beauty intelligence engines</span></div>
+              <div class="metric"><strong>RM100k</strong><span>Seed funding request</span></div>
+            </div>
+          </div>
+
+          <div class="phone-shell reveal" aria-label="Glow Up Hack mobile app preview">
+            <div class="phone-screen">
+              <div class="scan-line"></div>
+              <div class="app-top">
+                <div class="pill"><span class="spark"></span> Aesthetic DNA</div>
+                <div class="avatar" aria-hidden="true"></div>
+              </div>
+              <div class="glow-score">
+                <div class="score-row">
+                  <div>
+                    <p class="screen-title">Personal Glow Score</p>
+                    <p class="screen-copy">Skin, style, budget, risk and recovery context</p>
+                  </div>
+                  <div class="ring" aria-hidden="true"></div>
+                </div>
+                <div class="score">86</div>
+              </div>
+              <div class="roadmap" aria-label="Personalised roadmap preview">
+                <div class="roadmap-card">
+                  <div class="icon-dot">1</div>
+                  <div><strong>Guided assessment</strong><span>Goals, skin, budget, comfort</span></div>
+                  <div class="status">Now</div>
+                </div>
+                <div class="roadmap-card">
+                  <div class="icon-dot">2</div>
+                  <div><strong>Verified matching</strong><span>Provider fit and risk review</span></div>
+                  <div class="status">AI</div>
+                </div>
+                <div class="roadmap-card">
+                  <div class="icon-dot">3</div>
+                  <div><strong>Aftercare support</strong><span>Checklists and escalation cues</span></div>
+                  <div class="status">24/7</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="summary">
+        <div class="wrap">
+          <div class="section-head reveal">
+            <div class="eyebrow"><span class="spark"></span> Executive Summary</div>
+            <h2>A smarter decision layer for beauty discovery.</h2>
+            <p class="section-copy">The platform combines beauty profiling, personalised roadmaps, provider verification, booking requests and post-service guidance into one mobile-first marketplace experience.</p>
+          </div>
+          <div class="grid three">
+            <article class="card reveal">
+              <h3>For users</h3>
+              <p>Clearer recommendations based on their actual needs, skin context, budget, style and comfort level.</p>
+            </article>
+            <article class="card reveal">
+              <h3>For providers</h3>
+              <p>Higher-intent clients matched to real expertise, not only advertising strength or social media reach.</p>
+            </article>
+            <article class="card reveal">
+              <h3>For the market</h3>
+              <p>More transparent comparison, less trial-and-error consumption and better trust signals for beauty decisions.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="problem">
+        <div class="wrap">
+          <div class="section-head reveal">
+            <div class="eyebrow"><span class="spark"></span> Market Problem</div>
+            <h2>Beauty choices are emotional, expensive and hard to verify.</h2>
+            <p class="section-copy">Users often make decisions from generic advice, filtered social content and incomplete provider information. That creates avoidable cost, disappointment and physical risk.</p>
+          </div>
+          <div class="grid two">
+            <article class="card highlight-card reveal">
+              <h3>The trust gap</h3>
+              <p>Users cannot easily verify whether online reviews, influencer claims, provider photos or treatment results are real.</p>
+            </article>
+            <article class="card reveal">
+              <span class="number">01</span>
+              <h3>Generic recommendations</h3>
+              <p>Most advice does not fit different skin types, budgets, personal styles or comfort levels.</p>
+            </article>
+            <article class="card reveal">
+              <span class="number">02</span>
+              <h3>Wrong choices are costly</h3>
+              <p>Beauty mistakes can waste money, consume time and create unnecessary physical risk.</p>
+            </article>
+            <article class="card reveal">
+              <span class="number">03</span>
+              <h3>Quality is hard to surface</h3>
+              <p>Skilled providers may lose customers to competitors with stronger advertising rather than better service quality.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="insights">
+        <div class="wrap">
+          <div class="section-head reveal">
+            <div class="eyebrow"><span class="spark"></span> User Interview Insights</div>
+            <h2>People want confidence before they commit.</h2>
+          </div>
+          <div class="grid two">
+            <article class="card reveal">
+              <h3>Needs-led guidance</h3>
+              <p>Users want recommendations based on their actual needs, not the most expensive service.</p>
+            </article>
+            <article class="card reveal">
+              <h3>Verified evidence</h3>
+              <p>Users care about verified results because social media can be misleading.</p>
+            </article>
+            <article class="card reveal">
+              <h3>Sensitive-skin safety</h3>
+              <p>Sensitive-skin users need safer guidance, clearer evidence and realistic expectation setting.</p>
+            </article>
+            <article class="card reveal">
+              <h3>Provider intent</h3>
+              <p>Providers want high-intent clients matched to their real expertise.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="market">
+        <div class="wrap">
+          <div class="section-head reveal">
+            <div class="eyebrow"><span class="spark"></span> Target Market</div>
+            <h2>Beauty-conscious Gen Z and millennial users in Kuala Lumpur and Klang Valley.</h2>
+            <p class="section-copy">The initial market focuses on mobile-native users who already compare beauty content online but need a more trusted path to action.</p>
+          </div>
+          <div class="grid three">
+            <article class="card reveal">
+              <h3>Skincare guidance</h3>
+              <p>Personalised routines, ingredient caution, skin goal planning and safer comparison.</p>
+            </article>
+            <article class="card reveal">
+              <h3>Nail services</h3>
+              <p>Style matching, provider portfolio review, pricing clarity and repeat booking support.</p>
+            </article>
+            <article class="card reveal">
+              <h3>Selected non-invasive services</h3>
+              <p>Risk-aware education, expectation setting and post-service guidance without medical diagnosis claims.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="solution">
+        <div class="wrap">
+          <div class="section-head reveal">
+            <div class="eyebrow"><span class="spark"></span> Our Solution</div>
+            <h2>From profile to provider match to aftercare support.</h2>
+            <p class="section-copy">Glow Up Hack helps users create a beauty profile, receive a personalised roadmap, compare verified providers, book suitable services and receive post-service support.</p>
+          </div>
+          <div class="grid four">
+            <article class="card reveal">
+              <h3>Create beauty profile</h3>
+              <p>Capture skin condition, facial features, personal style, budget, comfort level and goals.</p>
+            </article>
+            <article class="card reveal">
+              <h3>Personalised roadmap</h3>
+              <p>Translate goals into practical, phased beauty actions that can evolve over time.</p>
+            </article>
+            <article class="card reveal">
+              <h3>Compare verified providers</h3>
+              <p>Show provider fit, portfolio signals, service categories and trust indicators.</p>
+            </article>
+            <article class="card reveal">
+              <h3>Post-service guidance</h3>
+              <p>Offer checklists, reminders and escalation suggestions when professional help may be needed.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="ai">
+        <div class="wrap">
+          <div class="section-head reveal">
+            <div class="eyebrow"><span class="spark"></span> Five AI Innovations</div>
+            <h2>Purpose-built AI for safer beauty decisions.</h2>
+          </div>
+          <div class="grid feature-grid">
+            <article class="feature reveal">
+              <div class="feature-icon">DNA</div>
+              <div><h3>Aesthetic DNA Engine</h3><p>Creates a unique profile based on skin condition, facial features, style preferences, budget, comfort level and beauty goals.</p></div>
+            </article>
+            <article class="feature reveal">
+              <div class="feature-icon">MAP</div>
+              <div><h3>Dynamic Glow-Up Roadmap</h3><p>Builds a personalised beauty plan that evolves based on user feedback, environmental factors, lifestyle and progress.</p></div>
+            </article>
+            <article class="feature reveal">
+              <div class="feature-icon">FIT</div>
+              <div><h3>AI-Audited Matching</h3><p>Uses provider verification and portfolio checking to match users with suitable professionals based on real expertise.</p></div>
+            </article>
+            <article class="feature reveal">
+              <div class="feature-icon">SIM</div>
+              <div><h3>Predictive Outcome Simulation</h3><p>Helps users understand possible results before deciding, reducing uncertainty and unrealistic expectations.</p></div>
+            </article>
+            <article class="feature reveal">
+              <div class="feature-icon">24</div>
+              <div><h3>24/7 AI Recovery Companion</h3><p>Provides general post-service guidance, checklists, reminders and escalation suggestions when professional help may be needed.</p></div>
+            </article>
+            <article class="feature reveal">
+              <div class="feature-icon">WHY</div>
+              <div><h3>Explainable recommendations</h3><p>Shows users why a service, provider or product direction fits their profile, instead of hiding the logic.</p></div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="journey">
+        <div class="wrap">
+          <div class="section-head reveal">
+            <div class="eyebrow"><span class="spark"></span> User Journey / How It Works</div>
+            <h2>Eight steps from discovery to continuous improvement.</h2>
+          </div>
+          <div class="grid journey">
+            <article class="step reveal"><div class="step-num">1</div><div><h3>Create profile</h3><p>Start with goals, needs and basic preferences.</p></div></article>
+            <article class="step reveal"><div class="step-num">2</div><div><h3>Guided assessment</h3><p>Share skin, style, budget and comfort context.</p></div></article>
+            <article class="step reveal"><div class="step-num">3</div><div><h3>Generate DNA</h3><p>Create an Aesthetic DNA profile.</p></div></article>
+            <article class="step reveal"><div class="step-num">4</div><div><h3>Receive roadmap</h3><p>View phased personal recommendations.</p></div></article>
+            <article class="step reveal"><div class="step-num">5</div><div><h3>Compare providers</h3><p>Review verified options and fit signals.</p></div></article>
+            <article class="step reveal"><div class="step-num">6</div><div><h3>Book service</h3><p>Send a booking request to a suitable provider.</p></div></article>
+            <article class="step reveal"><div class="step-num">7</div><div><h3>Get support</h3><p>Use post-service checklists and reminders.</p></div></article>
+            <article class="step reveal"><div class="step-num">8</div><div><h3>Improve profile</h3><p>Update feedback to improve recommendations.</p></div></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="provider">
+        <div class="wrap">
+          <div class="section-head reveal">
+            <div class="eyebrow"><span class="spark"></span> Provider Value</div>
+            <h2>Helping strong providers reach the right clients.</h2>
+          </div>
+          <div class="grid two">
+            <article class="card highlight-card reveal">
+              <h3>Provider dashboard</h3>
+              <p>A future provider workspace can show customer intent, booking requests, feedback patterns and service improvement opportunities.</p>
+            </article>
+            <article class="card reveal">
+              <ul class="list">
+                <li>Better customer matching</li>
+                <li>Reduced dependence on social media traffic</li>
+                <li>Verified profile badge</li>
+                <li>Higher-quality leads</li>
+                <li>Customer feedback and service improvement loop</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="advantage">
+        <div class="wrap">
+          <div class="section-head reveal">
+            <div class="eyebrow"><span class="spark"></span> Competitive Advantage</div>
+            <h2>More than a booking app. More trusted than a social feed.</h2>
+            <p class="section-copy">Compared with booking apps and social media, Glow Up Hack focuses on intelligent decision support, provider verification, risk-aware matching, personalised roadmaps and continued aftercare support.</p>
+          </div>
+          <div class="grid three">
+            <article class="card reveal"><h3>Decision intelligence</h3><p>Guides users before the booking instead of only listing available services.</p></article>
+            <article class="card reveal"><h3>Risk-aware matching</h3><p>Uses user context and provider evidence to reduce mismatch and unrealistic expectations.</p></article>
+            <article class="card reveal"><h3>Continuous support</h3><p>Extends beyond the transaction with roadmap updates and aftercare guidance.</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="mvp">
+        <div class="wrap">
+          <div class="section-head reveal">
+            <div class="eyebrow"><span class="spark"></span> MVP Scope</div>
+            <h2>A focused prototype that proves the core loop.</h2>
+            <p class="section-copy">The MVP should demonstrate account creation, beauty profile, personalised recommendations, provider comparison, booking request and post-service guidance. It should not claim medical diagnosis.</p>
+          </div>
+          <div class="grid three">
+            <article class="card reveal"><h3>User flow</h3><p>Account creation, guided assessment, Aesthetic DNA profile and personalised roadmap.</p></article>
+            <article class="card reveal"><h3>Marketplace flow</h3><p>Provider comparison, service detail pages, trust indicators and booking request.</p></article>
+            <article class="card reveal"><h3>Support flow</h3><p>General post-service guidance, reminders, feedback capture and escalation suggestions.</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="safety">
+        <div class="wrap">
+          <div class="section-head reveal">
+            <div class="eyebrow"><span class="spark"></span> Safety, Privacy and Responsible AI</div>
+            <h2>Trust must be designed into the product from day one.</h2>
+          </div>
+          <div class="grid two">
+            <article class="card reveal">
+              <h3>Data and privacy</h3>
+              <ul class="list">
+                <li>Consent-based data collection</li>
+                <li>Minimal data retention</li>
+                <li>Secure storage</li>
+                <li>Clear deletion controls</li>
+              </ul>
+            </article>
+            <article class="card reveal">
+              <h3>Responsible AI guardrails</h3>
+              <ul class="list">
+                <li>Explainable recommendations</li>
+                <li>No absolute outcome promises</li>
+                <li>No medical diagnosis claims</li>
+                <li>Escalation to qualified professionals for serious concerns</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="model">
+        <div class="wrap">
+          <div class="section-head reveal">
+            <div class="eyebrow"><span class="spark"></span> Business Model</div>
+            <h2>Marketplace revenue with premium provider tools.</h2>
+          </div>
+          <div class="grid four">
+            <article class="card reveal"><h3>Transaction commission</h3><p>Revenue from completed bookings through the marketplace.</p></article>
+            <article class="card reveal"><h3>Provider subscription</h3><p>Advanced analytics and customer management tools for providers.</p></article>
+            <article class="card reveal"><h3>Partnership income</h3><p>Selected partnership or referral revenue from aligned beauty brands.</p></article>
+            <article class="card reveal"><h3>Future B2B tools</h3><p>Data-informed tools for clinics, salons and beauty service operators.</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="roadmap">
+        <div class="wrap">
+          <div class="section-head reveal">
+            <div class="eyebrow"><span class="spark"></span> Roadmap</div>
+            <h2>A phased path from Kuala Lumpur pilot to Southeast Asia expansion.</h2>
+          </div>
+          <div class="grid three">
+            <article class="card reveal"><span class="number">Y1</span><h3>Kuala Lumpur pilot</h3><p>Functional MVP, 3,000-5,000 users and 50-100 providers.</p></article>
+            <article class="card reveal"><span class="number">Y2</span><h3>Malaysia growth</h3><p>Improved recommendation engine, provider analytics and wider city coverage.</p></article>
+            <article class="card reveal"><span class="number">Y3+</span><h3>Southeast Asia expansion</h3><p>Multilingual support, deeper personalisation and regional provider networks.</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="funding">
+        <div class="wrap">
+          <div class="section-head reveal">
+            <div class="eyebrow"><span class="spark"></span> Funding Request</div>
+            <h2>RM100,000 seed funding to build, pilot and validate.</h2>
+          </div>
+          <div class="grid two">
+            <article class="card highlight-card reveal">
+              <h3>Use of funds</h3>
+              <p>The seed budget supports product development, launch marketing, provider onboarding, privacy advisory and operating runway for the pilot.</p>
+              <div class="chips">
+                <span class="chip">MVP</span>
+                <span class="chip">Pilot launch</span>
+                <span class="chip">Provider verification</span>
+                <span class="chip">Responsible AI</span>
+              </div>
+            </article>
+            <article class="funding reveal">
+              <div class="fund-row"><span><strong>Product development</strong></span><b>RM35,000</b></div>
+              <div class="fund-row"><span><strong>Marketing and user acquisition</strong></span><b>RM25,000</b></div>
+              <div class="fund-row"><span><strong>Provider onboarding and verification</strong></span><b>RM15,000</b></div>
+              <div class="fund-row"><span><strong>Legal, privacy and advisory</strong></span><b>RM10,000</b></div>
+              <div class="fund-row"><span><strong>Operations and contingency</strong></span><b>RM15,000</b></div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="impact">
+        <div class="wrap">
+          <div class="section-head reveal">
+            <div class="eyebrow"><span class="spark"></span> Sustainability and Social Impact</div>
+            <h2>Reducing waste while supporting responsible local providers.</h2>
+            <p class="section-copy">Glow Up Hack reduces trial-and-error consumption, supports responsible local providers and highlights verified ethical or eco-conscious practices.</p>
+          </div>
+          <div class="grid three">
+            <article class="card reveal"><h3>Less trial and error</h3><p>Better matching can reduce unnecessary purchases and unsuitable services.</p></article>
+            <article class="card reveal"><h3>Local provider visibility</h3><p>Quality providers can compete through verified expertise, not only ad spend.</p></article>
+            <article class="card reveal"><h3>Ethical choices</h3><p>Users can discover providers and practices aligned with responsible beauty values.</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="team">
+        <div class="wrap">
+          <div class="section-head reveal">
+            <div class="eyebrow"><span class="spark"></span> Team</div>
+            <h2>A student team combining market, technology and product execution.</h2>
+          </div>
+          <div class="team-grid">
+            <article class="person reveal">
+              <div class="person-avatar">GS</div>
+              <div><h3>Gao Siwei</h3><p>Chief Executive / Market Lead</p></div>
+            </article>
+            <article class="person reveal">
+              <div class="person-avatar">LM</div>
+              <div><h3>Li Mingjun</h3><p>Technology and Data Lead</p></div>
+            </article>
+            <article class="person reveal">
+              <div class="person-avatar">KB</div>
+              <div><h3>Kong Bowen</h3><p>Product, Operations and Growth Lead</p></div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section contact" id="contact">
+        <div class="wrap">
+          <div class="cta-panel reveal">
+            <div>
+              <div class="eyebrow"><span class="spark"></span> Contact / QR Call to Action</div>
+              <h2>Scan to experience the Glow Up Hack project website.</h2>
+              <p>Designed for QR-code scanning presentations, university innovation showcases and early partner conversations.</p>
+              <div class="contact-links">
+                <a href="mailto:hello@glowuphack.ai">hello@glowuphack.ai</a>
+                <a href="https://www.glowuphack.ai">www.glowuphack.ai</a>
+              </div>
+            </div>
+            <div class="qr-card" aria-label="Presentation QR placeholder">
+              <div class="qr" aria-hidden="true"></div>
+              <p class="qr-label">Glow Up Hack demo access</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    const revealItems = document.querySelectorAll('.reveal');
+    const navLinks = document.querySelectorAll('.nav-links a');
+    const sections = [...navLinks]
+      .map((link) => document.querySelector(link.getAttribute('href')))
+      .filter(Boolean);
+
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    revealItems.forEach((item) => revealObserver.observe(item));
+
+    const navObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        navLinks.forEach((link) => {
+          link.classList.toggle('active', link.getAttribute('href') === `#${entry.target.id}`);
+        });
+      });
+    }, { rootMargin: '-35% 0px -55% 0px', threshold: 0 });
+
+    sections.forEach((section) => navObserver.observe(section));
+  </script>
+</body>
+</html>
