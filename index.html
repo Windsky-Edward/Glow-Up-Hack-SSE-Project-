@@ -773,41 +773,14 @@
       box-shadow: 0 24px 52px rgba(23, 18, 34, 0.22);
     }
 
-    .qr {
-      position: relative;
+    .qr-image {
+      display: block;
       width: 100%;
       aspect-ratio: 1;
-      overflow: hidden;
-      border: 12px solid #fff;
       border-radius: var(--radius);
-      background:
-        linear-gradient(90deg, var(--ink) 16px, transparent 16px) 0 0 / 32px 32px,
-        linear-gradient(var(--ink) 16px, transparent 16px) 0 0 / 32px 32px,
-        #fff;
+      object-fit: cover;
+      background: #fff;
       box-shadow: inset 0 0 0 2px rgba(124, 58, 237, 0.12);
-      image-rendering: pixelated;
-    }
-
-    .qr::before,
-    .qr::after {
-      content: "";
-      position: absolute;
-      width: 54px;
-      height: 54px;
-      border: 12px solid #fff;
-      outline: 10px solid var(--ink);
-      border-radius: 4px;
-      background: var(--ink);
-    }
-
-    .qr::before {
-      left: 10px;
-      top: 10px;
-    }
-
-    .qr::after {
-      right: 10px;
-      bottom: 10px;
     }
 
     .qr-label {
@@ -1383,9 +1356,9 @@
                 <a href="https://www.glowuphack.ai">www.glowuphack.ai</a>
               </div>
             </div>
-            <div class="qr-card" aria-label="Presentation QR placeholder">
-              <div class="qr" aria-hidden="true"></div>
-              <p class="qr-label">Glow Up Hack demo access</p>
+            <div class="qr-card" aria-label="QR code linking to the Glow Up Hack website">
+              <img class="qr-image" src="assets/qr-glow-up-hack.png" alt="QR code for https://glow-up-hack-sse-project.vercel.app/" />
+              <p class="qr-label">Scan for live website</p>
             </div>
           </div>
         </div>
